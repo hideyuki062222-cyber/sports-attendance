@@ -28,3 +28,10 @@
 .teamBadges{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}.teamBadges span,.eventGroupTag{display:inline-block;background:#eef4ff;color:#315a9a;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:700}.teamBadges .empty{background:#f1f3f6;color:#7a8493}
 .eventGroupTag{margin:6px 0}
 @media(max-width:500px){.teamGroupAdd{grid-template-columns:1fr}.teamGroupChecks{gap:6px}.teamGroupCheck{padding:7px 9px}}
+
+.guardianPlayerProfile{margin-top:14px;padding:14px;border:1px solid #dfe6ef;border-radius:14px;background:#f8fbff}
+.guardianPlayerProfile h3{margin:0 0 10px}
+.guardianPlayerProfile label{display:block;margin:8px 0}
+.guardianPlayerProfile input{margin-top:5px}
+.guardianPlayerProfile .muted{line-height:1.5}
+#saveGuardianPlayer{width:100%;margin-top:8px}
