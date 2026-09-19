@@ -19,3 +19,12 @@
 .monthEventArrow{font-size:24px;color:#7b8aa0;text-align:right}
 .monthNoEvents{padding:8px 2px}
 @media(max-width:500px){.monthEventItem{grid-template-columns:66px 1fr 16px;padding:11px 8px}.monthEventDate{font-size:12px}.monthEventMain b{font-size:13px}}
+
+.teamGroupAdmin{margin:0 0 18px;padding:14px;border:1px solid #dfe6ef;border-radius:14px;background:#f8fbff}
+.teamGroupAdmin h3{margin:0 0 6px}.teamGroupAdd{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.teamGroupAdd input{margin:0}.teamGroupAdd button{margin:0}
+.teamGroupRow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #e7ecf2}.teamGroupRow:last-child{border-bottom:0}
+.teamGroupPicker{margin:12px 0;padding:12px;border:1px solid #dfe6ef;border-radius:12px}.teamGroupPicker legend{font-weight:700;padding:0 6px}.teamGroupPicker .muted{margin:0 0 8px}
+.teamGroupChecks{display:flex;flex-wrap:wrap;gap:8px}.teamGroupCheck{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid #d7dfeb;border-radius:999px;background:#fff;margin:0}.teamGroupCheck input{width:auto;margin:0}.teamGroupCheck span{font-size:13px;font-weight:700}
+.teamBadges{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}.teamBadges span,.eventGroupTag{display:inline-block;background:#eef4ff;color:#315a9a;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:700}.teamBadges .empty{background:#f1f3f6;color:#7a8493}
+.eventGroupTag{margin:6px 0}
+@media(max-width:500px){.teamGroupAdd{grid-template-columns:1fr}.teamGroupChecks{gap:6px}.teamGroupCheck{padding:7px 9px}}
