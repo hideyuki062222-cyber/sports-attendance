@@ -102,3 +102,5 @@
 .birthJapanese input{margin:0;width:100%}
 .birthPreview{margin-top:8px;line-height:1.5}
 @media(max-width:500px){.birthJapanese{grid-template-columns:1fr 1fr}.birthJapanese>select{grid-column:1/-1}}
+
+.birthTitle{font-weight:800;margin-bottom:8px}.birthInputBox>label{font-weight:600}
