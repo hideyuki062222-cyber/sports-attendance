@@ -71,3 +71,22 @@
 #monthEventList .monthEventItem,.eventCard,#formation{scroll-margin-top:18px}
 .jumpFocus{animation:jumpFocusPulse 1.25s ease}
 @keyframes jumpFocusPulse{0%{box-shadow:0 0 0 0 rgba(37,99,235,.45)}45%{box-shadow:0 0 0 5px rgba(37,99,235,.18)}100%{box-shadow:0 0 0 0 rgba(37,99,235,0)}}
+
+/* Sport-specific formation surfaces */
+.formationPitch.sport-soccer{aspect-ratio:68/105;background:repeating-linear-gradient(90deg,#218b4d 0,#218b4d 12.5%,#269956 12.5%,#269956 25%)}
+.formationPitch.sport-futsal{aspect-ratio:2/3;background:#2f7fa6}
+.formationPitch.sport-volleyball{aspect-ratio:1/1.8;background:#e9a85d}
+.formationPitch.sport-volleyball:before{height:4px;background:#fff;box-shadow:0 -2px 0 rgba(30,70,130,.35),0 2px 0 rgba(30,70,130,.35)}
+.formationPitch.sport-volleyball:after{display:none}
+.formationPitch.sport-basketball{aspect-ratio:15/28;background:repeating-linear-gradient(90deg,#d7a56a 0,#d7a56a 8%,#dcae77 8%,#dcae77 16%)}
+.formationPitch.sport-baseball{aspect-ratio:1/1;background:radial-gradient(circle at 50% 62%,#b98652 0 11%,transparent 11.5%),linear-gradient(#4e9a55,#398446)}
+.formationPitch.sport-baseball:before{display:none}
+.formationPitch.sport-baseball:after{display:block;left:50%;top:61%;width:34%;aspect-ratio:1;border:2px solid rgba(255,255,255,.85);border-radius:0;transform:translate(-50%,-50%) rotate(45deg);background:rgba(180,125,73,.55)}
+.formationPitch.sport-tennis{aspect-ratio:9/16;background:#3c89b7}
+.formationPitch.sport-tennis:after{display:none}
+.formationPitch.sport-badminton{aspect-ratio:9/16;background:#4c9c6b}
+.formationPitch.sport-badminton:after{display:none}
+.formationPitch.sport-generic{aspect-ratio:3/4;background:#667085}
+.formationPitch.sport-generic:after{border-style:dashed;opacity:.45}
+.formationPitch.sport-volleyball .formationSlot,.formationPitch.sport-basketball .formationSlot,.formationPitch.sport-tennis .formationSlot,.formationPitch.sport-badminton .formationSlot{background:rgba(25,42,66,.74)!important}
+.formationPitch.sport-baseball .formationSlot{background:rgba(70,44,22,.76)!important}
