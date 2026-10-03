@@ -64,6 +64,18 @@ const formationSchemas={
   {key:'MF1',label:'MF',x:25,y:44},{key:'MF2',label:'MF',x:50,y:44},{key:'MF3',label:'MF',x:75,y:44},
   {key:'FW1',label:'FW',x:35,y:18},{key:'FW2',label:'FW',x:65,y:18}
  ],
+ '3-3-1':[
+  {key:'GK',label:'GK',x:50,y:90},
+  {key:'DF1',label:'DF',x:24,y:68},{key:'DF2',label:'DF',x:50,y:68},{key:'DF3',label:'DF',x:76,y:68},
+  {key:'MF1',label:'MF',x:24,y:43},{key:'MF2',label:'MF',x:50,y:43},{key:'MF3',label:'MF',x:76,y:43},
+  {key:'FW1',label:'FW',x:50,y:18}
+ ],
+ '2-3-2':[
+  {key:'GK',label:'GK',x:50,y:90},
+  {key:'DF1',label:'DF',x:35,y:68},{key:'DF2',label:'DF',x:65,y:68},
+  {key:'MF1',label:'MF',x:22,y:43},{key:'MF2',label:'MF',x:50,y:43},{key:'MF3',label:'MF',x:78,y:43},
+  {key:'FW1',label:'FW',x:35,y:18},{key:'FW2',label:'FW',x:65,y:18}
+ ],
  '1-2-1':[
   {key:'GK',label:'GK',x:50,y:90},
   {key:'FIXO',label:'FIXO',x:50,y:68},
