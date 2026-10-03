@@ -671,3 +671,39 @@ button:active{transform:scale(.985)}
     font-size:18px;
   }
 }
+
+/* Keep completed substitution OUT / IN on one line */
+@media(max-width:500px){
+  .formationCompleteSubs .completeSubRow{
+    display:grid;
+    grid-template-columns:42px auto minmax(0,1fr) 14px auto minmax(0,1fr);
+    gap:4px;
+    align-items:center;
+    padding:7px 0;
+  }
+  .formationCompleteSubs .completeSubRow .subArrow{
+    display:inline!important;
+    text-align:center;
+  }
+  .formationCompleteSubs .completeSubRow .subIn{
+    grid-column:auto!important;
+  }
+  .formationCompleteSubs .completeSubRow .subIn + b{
+    grid-column:auto!important;
+  }
+  .formationCompleteSubs .completeSubRow b{
+    min-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size:12px;
+  }
+  .formationCompleteSubs .completeSubTime{
+    font-size:12px;
+  }
+  .formationCompleteSubs .subOut,
+  .formationCompleteSubs .subIn{
+    padding:3px 6px;
+    font-size:9px;
+  }
+}
