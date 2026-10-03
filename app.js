@@ -186,6 +186,91 @@ const formationSchemas={
   {key:'PIVO',label:'PIVO',x:50,y:18}
  ]
 };
+
+Object.assign(formationSchemas,{
+ 'volley-6-basic':[
+  {key:'V4',label:'前衛左',x:20,y:32},{key:'V3',label:'前衛中',x:50,y:32},{key:'V2',label:'前衛右',x:80,y:32},
+  {key:'V5',label:'後衛左',x:20,y:74},{key:'V6',label:'後衛中',x:50,y:74},{key:'V1',label:'後衛右',x:80,y:74}
+ ],
+ 'volley-6-receive-w':[
+  {key:'V4',label:'前衛左',x:18,y:28},{key:'V3',label:'前衛中',x:50,y:24},{key:'V2',label:'前衛右',x:82,y:28},
+  {key:'V5',label:'レシーブ',x:24,y:68},{key:'V6',label:'レシーブ',x:50,y:80},{key:'V1',label:'レシーブ',x:76,y:68}
+ ],
+ 'volley-6-receive-3':[
+  {key:'V4',label:'前衛左',x:18,y:28},{key:'V3',label:'前衛中',x:50,y:25},{key:'V2',label:'前衛右',x:82,y:28},
+  {key:'V5',label:'レシーブ',x:22,y:72},{key:'V6',label:'レシーブ',x:50,y:72},{key:'V1',label:'レシーブ',x:78,y:72}
+ ],
+ 'volley-9-basic':[
+  {key:'VF1',label:'前衛左',x:20,y:25},{key:'VF2',label:'前衛中',x:50,y:25},{key:'VF3',label:'前衛右',x:80,y:25},
+  {key:'VM1',label:'中衛左',x:20,y:50},{key:'VM2',label:'中衛中',x:50,y:50},{key:'VM3',label:'中衛右',x:80,y:50},
+  {key:'VB1',label:'後衛左',x:20,y:78},{key:'VB2',label:'後衛中',x:50,y:78},{key:'VB3',label:'後衛右',x:80,y:78}
+ ],
+ 'basket-positions':[
+  {key:'PG',label:'PG',x:50,y:78},{key:'SG',label:'SG',x:20,y:58},{key:'SF',label:'SF',x:80,y:58},{key:'PF',label:'PF',x:32,y:28},{key:'C',label:'C',x:68,y:28}
+ ],
+ 'basket-5-out':[
+  {key:'P1',label:'トップ',x:50,y:76},{key:'P2',label:'左45°',x:20,y:58},{key:'P3',label:'右45°',x:80,y:58},{key:'P4',label:'左コーナー',x:14,y:25},{key:'P5',label:'右コーナー',x:86,y:25}
+ ],
+ 'basket-4out1in':[
+  {key:'P1',label:'トップ',x:50,y:78},{key:'P2',label:'左45°',x:20,y:56},{key:'P3',label:'右45°',x:80,y:56},{key:'P4',label:'コーナー',x:14,y:25},{key:'P5',label:'インサイド',x:60,y:24}
+ ],
+ 'basket-3out2in':[
+  {key:'P1',label:'トップ',x:50,y:78},{key:'P2',label:'左ウイング',x:18,y:52},{key:'P3',label:'右ウイング',x:82,y:52},{key:'P4',label:'左インサイド',x:35,y:24},{key:'P5',label:'右インサイド',x:65,y:24}
+ ],
+ 'basket-zone-2-3':[
+  {key:'Z1',label:'上左',x:35,y:68},{key:'Z2',label:'上右',x:65,y:68},{key:'Z3',label:'下左',x:18,y:36},{key:'Z4',label:'中央',x:50,y:28},{key:'Z5',label:'下右',x:82,y:36}
+ ],
+ 'basket-zone-3-2':[
+  {key:'Z1',label:'上左',x:25,y:66},{key:'Z2',label:'上中',x:50,y:72},{key:'Z3',label:'上右',x:75,y:66},{key:'Z4',label:'下左',x:32,y:30},{key:'Z5',label:'下右',x:68,y:30}
+ ],
+ 'basket-zone-1-2-2':[
+  {key:'Z1',label:'トップ',x:50,y:75},{key:'Z2',label:'中左',x:28,y:54},{key:'Z3',label:'中右',x:72,y:54},{key:'Z4',label:'下左',x:28,y:27},{key:'Z5',label:'下右',x:72,y:27}
+ ],
+ 'baseball-defense':[
+  {key:'C',label:'C',x:50,y:90},{key:'P',label:'P',x:50,y:62},{key:'1B',label:'1B',x:76,y:58},{key:'2B',label:'2B',x:66,y:42},{key:'SS',label:'SS',x:34,y:42},{key:'3B',label:'3B',x:24,y:58},{key:'LF',label:'LF',x:18,y:24},{key:'CF',label:'CF',x:50,y:12},{key:'RF',label:'RF',x:82,y:24}
+ ],
+ 'baseball-shift-left':[
+  {key:'C',label:'C',x:50,y:90},{key:'P',label:'P',x:50,y:62},{key:'1B',label:'1B',x:73,y:56},{key:'2B',label:'2B',x:58,y:43},{key:'SS',label:'SS',x:28,y:42},{key:'3B',label:'3B',x:17,y:58},{key:'LF',label:'LF',x:13,y:24},{key:'CF',label:'CF',x:43,y:12},{key:'RF',label:'RF',x:75,y:25}
+ ],
+ 'baseball-shift-right':[
+  {key:'C',label:'C',x:50,y:90},{key:'P',label:'P',x:50,y:62},{key:'1B',label:'1B',x:83,y:58},{key:'2B',label:'2B',x:72,y:42},{key:'SS',label:'SS',x:42,y:43},{key:'3B',label:'3B',x:27,y:56},{key:'LF',label:'LF',x:25,y:25},{key:'CF',label:'CF',x:57,y:12},{key:'RF',label:'RF',x:87,y:24}
+ ],
+ 'tennis-singles':[{key:'T1',label:'選手',x:50,y:72}],
+ 'tennis-doubles':[{key:'T1',label:'左',x:30,y:72},{key:'T2',label:'右',x:70,y:72}],
+ 'badminton-singles':[{key:'B1',label:'選手',x:50,y:72}],
+ 'badminton-doubles':[{key:'B1',label:'左',x:30,y:72},{key:'B2',label:'右',x:70,y:72}],
+ 'generic-5':[{key:'G1',label:'1',x:50,y:78},{key:'G2',label:'2',x:25,y:55},{key:'G3',label:'3',x:75,y:55},{key:'G4',label:'4',x:30,y:28},{key:'G5',label:'5',x:70,y:28}],
+ 'generic-6':[{key:'G1',label:'1',x:20,y:70},{key:'G2',label:'2',x:50,y:70},{key:'G3',label:'3',x:80,y:70},{key:'G4',label:'4',x:20,y:30},{key:'G5',label:'5',x:50,y:30},{key:'G6',label:'6',x:80,y:30}],
+ 'generic-8':[{key:'G1',label:'1',x:18,y:75},{key:'G2',label:'2',x:50,y:75},{key:'G3',label:'3',x:82,y:75},{key:'G4',label:'4',x:28,y:50},{key:'G5',label:'5',x:72,y:50},{key:'G6',label:'6',x:18,y:24},{key:'G7',label:'7',x:50,y:24},{key:'G8',label:'8',x:82,y:24}],
+ 'generic-11':[{key:'G1',label:'1',x:50,y:88},{key:'G2',label:'2',x:15,y:68},{key:'G3',label:'3',x:38,y:68},{key:'G4',label:'4',x:62,y:68},{key:'G5',label:'5',x:85,y:68},{key:'G6',label:'6',x:18,y:43},{key:'G7',label:'7',x:50,y:43},{key:'G8',label:'8',x:82,y:43},{key:'G9',label:'9',x:20,y:18},{key:'G10',label:'10',x:50,y:14},{key:'G11',label:'11',x:80,y:18}]
+});
+
+const sportFormationConfigs={
+ 'サッカー':{icon:'⚽',heading:'サッカー フォーメーション',action:'⚽ フォーメーション',label:'フォーメーション',pitch:'sport-soccer',defaultType:'4-4-2',guide:'11人制・8人制のフォーメーションを選べます。微調整ONなら各ポジションを自由に動かせます。',groups:[
+  {label:'11人制',options:[['4-4-2','4-4-2'],['4-3-3','4-3-3'],['4-2-3-1','4-2-3-1'],['4-1-4-1','4-1-4-1'],['4-1-2-3','4-1-2-3'],['4-3-1-2','4-3-1-2'],['4-3-2-1','4-3-2-1'],['4-5-1','4-5-1'],['3-4-3','3-4-3'],['3-5-2','3-5-2'],['3-4-1-2','3-4-1-2'],['3-4-2-1','3-4-2-1'],['3-1-4-2','3-1-4-2'],['5-3-2','5-3-2'],['5-4-1','5-4-1'],['5-2-3','5-2-3']]},
+  {label:'8人制',options:[['3-3-1','3-3-1'],['2-3-2','2-3-2'],['3-2-2','3-2-2'],['2-4-1','2-4-1'],['3-1-3','3-1-3'],['2-2-3','2-2-3']]}
+ ]},
+ 'フットサル':{icon:'⚽',heading:'フットサル フォーメーション',action:'⚽ フォーメーション',label:'フォーメーション',pitch:'sport-futsal',defaultType:'1-2-1',guide:'フットサル用の配置だけを表示します。',groups:[{label:'フットサル',options:[['1-2-1','1-2-1（ダイヤ）'],['2-2','2-2（ボックス）'],['3-1','3-1']]}]},
+ 'バレーボール':{icon:'🏐',heading:'バレーボール コート配置',action:'🏐 コート配置',label:'配置パターン',pitch:'sport-volleyball',defaultType:'volley-6-basic',guide:'6人制・9人制のコート配置を選べます。選手を登録する前でも位置を調整できます。',groups:[
+  {label:'6人制',options:[['volley-6-basic','6人制 基本配置'],['volley-6-receive-w','6人制 サーブレシーブ W型'],['volley-6-receive-3','6人制 サーブレシーブ 3人']]},
+  {label:'9人制',options:[['volley-9-basic','9人制 基本配置']]}
+ ]},
+ 'バスケットボール':{icon:'🏀',heading:'バスケットボール コート配置',action:'🏀 コート配置',label:'配置パターン',pitch:'sport-basketball',defaultType:'basket-positions',guide:'ポジション配置・オフェンス配置・ゾーン守備から選べます。',groups:[
+  {label:'基本',options:[['basket-positions','PG・SG・SF・PF・C']]},
+  {label:'オフェンス',options:[['basket-5-out','5アウト'],['basket-4out1in','4アウト1イン'],['basket-3out2in','3アウト2イン']]},
+  {label:'ゾーン守備',options:[['basket-zone-2-3','2-3ゾーン'],['basket-zone-3-2','3-2ゾーン'],['basket-zone-1-2-2','1-2-2ゾーン']]}
+ ]},
+ '野球':{icon:'⚾',heading:'野球 守備位置',action:'⚾ 守備位置',label:'守備配置',pitch:'sport-baseball',defaultType:'baseball-defense',guide:'出席者から守備位置を組めます。守備シフトも選択・微調整できます。',groups:[{label:'守備',options:[['baseball-defense','基本守備'],['baseball-shift-left','左寄りシフト'],['baseball-shift-right','右寄りシフト']]}]},
+ 'テニス':{icon:'🎾',heading:'テニス コート配置',action:'🎾 コート配置',label:'種目',pitch:'sport-tennis',defaultType:'tennis-singles',guide:'シングルス・ダブルスの配置を選べます。',groups:[{label:'テニス',options:[['tennis-singles','シングルス'],['tennis-doubles','ダブルス']]}]},
+ 'バドミントン':{icon:'🏸',heading:'バドミントン コート配置',action:'🏸 コート配置',label:'種目',pitch:'sport-badminton',defaultType:'badminton-singles',guide:'シングルス・ダブルスの配置を選べます。',groups:[{label:'バドミントン',options:[['badminton-singles','シングルス'],['badminton-doubles','ダブルス']]}]},
+ 'その他':{icon:'📍',heading:'選手配置',action:'📍 選手配置',label:'人数・配置',pitch:'sport-generic',defaultType:'generic-6',guide:'競技に合わせて人数を選び、位置を自由に調整できます。',groups:[{label:'自由配置',options:[['generic-5','5人'],['generic-6','6人'],['generic-8','8人'],['generic-11','11人']]}]}
+};
+function formationSportConfig(){return sportFormationConfigs[club?.sport]||sportFormationConfigs['その他']}
+function formationAllowedTypes(cfg=formationSportConfig()){return cfg.groups.flatMap(g=>g.options.map(o=>o[0]))}
+function formationActionLabel(){return formationSportConfig().action}
+function populateFormationTypeOptions(preferred){const cfg=formationSportConfig(),sel=$('formationType');if(!sel)return cfg.defaultType;sel.innerHTML=cfg.groups.map(g=>'<optgroup label="'+esc(g.label)+'">'+g.options.map(o=>'<option value="'+esc(o[0])+'">'+esc(o[1])+'</option>').join('')+'</optgroup>').join('');const allowed=formationAllowedTypes(cfg),picked=allowed.includes(preferred)?preferred:cfg.defaultType;sel.value=picked;return picked}
+function applyFormationSportUI(preferred){const cfg=formationSportConfig();if($('formationHeading'))$('formationHeading').textContent=cfg.icon+' '+cfg.heading;if($('formationSelectLabel'))$('formationSelectLabel').textContent=cfg.label;if($('formationGuide'))$('formationGuide').textContent=cfg.guide;const pitch=$('formationPitch');if(pitch){pitch.classList.remove('sport-soccer','sport-futsal','sport-volleyball','sport-basketball','sport-baseball','sport-tennis','sport-badminton','sport-generic');pitch.classList.add(cfg.pitch)}return populateFormationTypeOptions(preferred)}
+
 function formationEligiblePlayers(e){if(!e)return[];const targets=eventGroupIds(e.id),eligible=playerRows.filter(p=>(!e.category_id||p.category_id===e.category_id)&&(!targets.length||playerGroupIds(p.id).some(x=>targets.includes(x))));const attending=new Set(responses.filter(r=>r.event_id===e.id&&r.status==='出席').map(r=>r.player_id));return eligible.filter(p=>attending.has(p.id))}
 function formationPlayerName(id){return playerRows.find(p=>p.id===id)?.name||'選手'}
 function bindFormationButtons(){document.querySelectorAll('.formationEvent').forEach(b=>b.onclick=()=>openFormation(b.dataset.id))}
