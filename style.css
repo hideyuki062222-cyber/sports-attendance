@@ -90,3 +90,15 @@
 .formationPitch.sport-generic:after{border-style:dashed;opacity:.45}
 .formationPitch.sport-volleyball .formationSlot,.formationPitch.sport-basketball .formationSlot,.formationPitch.sport-tennis .formationSlot,.formationPitch.sport-badminton .formationSlot{background:rgba(25,42,66,.74)!important}
 .formationPitch.sport-baseball .formationSlot{background:rgba(70,44,22,.76)!important}
+
+.birthInputBox{margin:10px 0;padding:12px;border:1px solid #dfe6ef;border-radius:12px;background:#fafcff}
+.birthInputBox>label{display:block;font-weight:700;margin-bottom:8px}
+.birthMode{margin-top:6px}
+.birthWestern input{width:100%}
+.birthJapanese{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:7px;align-items:end}
+.birthJapanese>select{margin:0}
+.birthJapanese label{margin:0;font-size:12px}
+.birthJapanese label span{display:block;margin-bottom:4px;color:#667085}
+.birthJapanese input{margin:0;width:100%}
+.birthPreview{margin-top:8px;line-height:1.5}
+@media(max-width:500px){.birthJapanese{grid-template-columns:1fr 1fr}.birthJapanese>select{grid-column:1/-1}}
