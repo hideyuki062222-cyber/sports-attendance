@@ -104,3 +104,5 @@
 @media(max-width:500px){.birthJapanese{grid-template-columns:1fr 1fr}.birthJapanese>select{grid-column:1/-1}}
 
 .birthTitle{font-weight:800;margin-bottom:8px}.birthInputBox>label{font-weight:600}
+
+.resetMailBox{margin-top:22px;padding-top:18px;border-top:1px solid #e1e7f0}.resetMailBox h3{margin:0 0 8px}.resetMailBox select{margin:8px 0}.resetMailBox button{margin-top:4px}
