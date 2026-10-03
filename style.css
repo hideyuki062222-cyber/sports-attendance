@@ -39,3 +39,23 @@
 .guardianPlayerProfile input{margin-top:5px}
 .guardianPlayerProfile .muted{line-height:1.5}
 #saveGuardianPlayer{width:100%;margin-top:8px}
+
+.formationEvent{background:#137a45!important;color:#fff!important;margin:10px 6px 10px 0}
+.formationEventInfo{padding:10px 0 4px;line-height:1.6}
+.formationCount{font-weight:800;margin:10px 0;padding:9px 12px;border-radius:10px;background:#eef8f2;color:#166534}
+.formationWorkspace{display:grid;grid-template-columns:minmax(280px,430px) minmax(190px,1fr);gap:16px;align-items:start;margin-top:12px}
+.formationPitch{position:relative;width:100%;max-width:430px;aspect-ratio:68/105;margin:0 auto;background:repeating-linear-gradient(90deg,#218b4d 0,#218b4d 12.5%,#269956 12.5%,#269956 25%);border:3px solid #fff;outline:2px solid #207a47;border-radius:8px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
+.formationPitch:before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,.85);transform:translateY(-50%);pointer-events:none}
+.formationPitch:after{content:"";position:absolute;left:50%;top:50%;width:24%;aspect-ratio:1;border:2px solid rgba(255,255,255,.85);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.formationSlot{position:absolute;transform:translate(-50%,-50%);width:72px;min-height:50px;padding:5px 6px!important;margin:0!important;border-radius:14px!important;border:2px solid rgba(255,255,255,.95)!important;background:rgba(15,60,35,.72)!important;color:#fff!important;box-shadow:0 3px 9px rgba(0,0,0,.18)!important;z-index:2;font-size:12px!important;line-height:1.1}
+.formationSlot.occupied{background:#fff!important;color:#153b2a!important;border-color:#f5c842!important}
+.formationSlot small{display:block;margin-top:4px;font-size:9px;color:inherit;opacity:.72}
+.formationPlayerName{display:block;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.formationBench{border:1px solid #dfe6ef;border-radius:14px;padding:12px;background:#f8fafc}
+.formationBench h3{margin:0 0 10px}
+#formationBenchList{display:flex;flex-wrap:wrap;gap:8px}
+.formationPlayerChip{width:auto!important;margin:0!important;padding:9px 11px!important;border-radius:999px!important;background:#fff!important;color:#24415f!important;border:1px solid #cfd8e5!important;box-shadow:none!important}
+.formationPlayerChip.selected{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important;box-shadow:0 0 0 3px rgba(37,99,235,.16)!important}
+.formationActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+@media(max-width:700px){.formationWorkspace{grid-template-columns:1fr}.formationPitch{max-width:390px}.formationBench{margin-top:4px}}
+@media(max-width:420px){.formationSlot{width:60px;min-height:44px;padding:4px!important;font-size:10px!important}.formationSlot small{font-size:8px}.formationActions{grid-template-columns:1fr}.formationPitch{max-width:340px}}
