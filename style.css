@@ -136,3 +136,83 @@
 .adminMemberStatus small{grid-column:1/-1}
 .adminAttendanceSelect{margin:0;min-height:38px;padding:6px 8px;font-size:15px;font-weight:700}
 @media(max-width:420px){.adminMemberStatus{grid-template-columns:minmax(0,1fr) 118px}.adminAttendanceSelect{font-size:14px}}
+
+/* Formation readability + substitution planner */
+.formationPitch{
+  background:repeating-linear-gradient(90deg,#0b6b3a 0,#0b6b3a 12.5%,#0f7a43 12.5%,#0f7a43 25%);
+  outline:3px solid #0a5a32;
+  box-shadow:0 8px 22px rgba(15,23,42,.18),inset 0 0 0 1px rgba(255,255,255,.8)
+}
+.formationPitch.sport-soccer{background:repeating-linear-gradient(90deg,#0b6b3a 0,#0b6b3a 12.5%,#0f7a43 12.5%,#0f7a43 25%)}
+.formationSlot{
+  background:rgba(5,35,24,.9)!important;
+  border-color:#fff!important;
+  box-shadow:0 4px 12px rgba(0,0,0,.38)!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.45)
+}
+.formationSlot.occupied{
+  background:#fff!important;
+  color:#0f172a!important;
+  border-color:#facc15!important;
+  border-width:3px!important;
+  box-shadow:0 5px 14px rgba(0,0,0,.34),0 0 0 2px rgba(15,23,42,.18)!important;
+  text-shadow:none
+}
+.formationSlot.occupied .formationPlayerName{font-size:13px;font-weight:900}
+.formationSlot.occupied small{color:#475569;opacity:1;font-weight:700}
+.formationPlayerChip{border:2px solid #94a3b8!important;color:#0f172a!important;font-weight:800!important}
+.formationBench{background:#eef2f7;border-color:#b8c4d3}
+.formationCount{font-weight:800;color:#172033;margin:10px 0}
+
+.formationSubstitutionCard{margin-top:18px;padding:15px;border:2px solid #cbd5e1;border-radius:14px;background:#f8fafc}
+.formationSubstitutionCard h3{margin:0 0 5px;color:#172033}
+.formationSubstitutionForm{display:grid;grid-template-columns:minmax(120px,.7fr) 1fr 1fr auto;gap:8px;align-items:end;margin-top:12px}
+.formationSubstitutionForm label{margin:0;font-weight:700;color:#334155;font-size:13px}
+.formationSubstitutionForm input,.formationSubstitutionForm select{margin:5px 0 0;min-height:42px;background:#fff}
+.formationSubstitutionForm button{margin:0;min-height:42px}
+#formationSubstitutionList{margin-top:12px}
+.formationSubRow{display:grid;grid-template-columns:30px 70px minmax(0,1fr) auto;gap:8px;align-items:center;padding:10px 0;border-top:1px solid #d8e0ea}
+.formationSubNumber{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#172033;color:#fff;font-weight:900;font-size:12px}
+.formationSubTime{font-weight:900;color:#0f172a}
+.formationSubMove{display:flex;gap:6px;align-items:center;flex-wrap:wrap;min-width:0}
+.subOut,.subIn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:3px 7px;font-size:10px;font-weight:900;letter-spacing:.03em}
+.subOut{background:#fee2e2;color:#991b1b}
+.subIn{background:#dcfce7;color:#166534}
+.subArrow{font-weight:900;color:#475569}
+.formationNoSubs{margin:8px 0 0}
+
+.formationActions{grid-template-columns:1.2fr 1fr 1fr}
+#showFormationComplete{font-weight:800;border:2px solid #2563eb!important;color:#1d4ed8!important;background:#eff6ff!important}
+
+#formation.formationCompleteMode > :not(#formationBack):not(#formationCompleteView){display:none!important}
+#formation.formationCompleteMode #formationCompleteView{display:block!important}
+.formationCompleteView{margin-top:12px;padding:14px;border-radius:16px;background:#f7f9fc;border:1px solid #cbd5e1}
+.formationCompleteTitle{text-align:center;margin:12px 0 10px}
+.formationCompleteTitle>span{display:inline-block;padding:4px 10px;border-radius:999px;background:#172033;color:#fff;font-size:12px;font-weight:900}
+.formationCompleteTitle h2{margin:8px 0 4px;color:#0f172a}
+.formationCompleteTitle #formationCompleteInfo{color:#334155;line-height:1.55}
+.formationCompleteCount{text-align:center;font-weight:900;color:#172033;margin:8px 0 12px;padding:8px;border-radius:10px;background:#e8eef7}
+.formationCompletePitch{max-width:520px;box-shadow:0 10px 28px rgba(15,23,42,.24),inset 0 0 0 1px rgba(255,255,255,.8)}
+.formationCompletePitch .completeSlot{pointer-events:none;cursor:default}
+.formationCompletePitch .completeEmpty{opacity:.44;background:rgba(15,23,42,.58)!important;border-style:dashed!important}
+.formationCompleteBench,.formationCompleteSubs{margin-top:14px;padding:12px;border-radius:12px;background:#fff;border:1px solid #d6dee8}
+.formationCompleteBench h3,.formationCompleteSubs h3{margin:0 0 9px;color:#172033}
+#formationCompleteBenchList{display:flex;flex-wrap:wrap;gap:7px}
+.completeBenchChip{display:inline-flex;padding:7px 10px;border-radius:999px;background:#e2e8f0;color:#0f172a;font-weight:800;border:1px solid #b8c4d3}
+.completeSubRow{display:grid;grid-template-columns:64px auto minmax(0,1fr) 20px auto minmax(0,1fr);gap:6px;align-items:center;padding:9px 0;border-top:1px solid #e2e8f0}
+.completeSubRow:first-child{border-top:0}
+.completeSubTime{font-weight:900;color:#172033}
+
+@media(max-width:700px){
+  .formationSubstitutionForm{grid-template-columns:1fr 1fr}
+  .formationSubstitutionForm button{grid-column:1/-1}
+  .formationActions{grid-template-columns:1fr}
+}
+@media(max-width:440px){
+  .formationSubRow{grid-template-columns:28px 58px 1fr}
+  .formationSubRow>button{grid-column:1/-1}
+  .completeSubRow{grid-template-columns:54px auto 1fr}
+  .completeSubRow .subArrow{display:none}
+  .completeSubRow .subIn{grid-column:2}
+  .completeSubRow .subIn+ b{grid-column:3}
+}
