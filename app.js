@@ -311,7 +311,6 @@ function bindAttendance(){document.querySelectorAll('.reply .status').forEach(b=
 $('prev').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()-1,1);render()};$('next').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()+1,1);render()};function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}boot();
 if($('replyPlayer'))$('replyPlayer').onchange=()=>{const d=document.querySelector('.day.selected')?.dataset.date;render(d)};
 
-let joinPreviewGroups=[];
 async function showTeamJoin(){
   $('auth')?.classList.add('hidden');$('guardianSetup')?.classList.add('hidden');$('setup')?.classList.add('hidden');$('app')?.classList.add('hidden');$('teamJoin')?.classList.remove('hidden');
   msg('teamJoinMsg','');
@@ -322,18 +321,8 @@ async function showTeamJoin(){
     $('joinClubInfo').innerHTML='<b>登録用QRコードを確認できません</b>';
     msg('teamJoinMsg',t);$('submitTeamJoin').disabled=true;return;
   }
-  const c=data.club||{};joinPreviewGroups=data.groups||[];
+  const c=data.club||{};
   $('joinClubInfo').innerHTML='<b>'+esc(c.name||'チーム')+'</b><div class="muted">'+esc(c.sport||'')+'</div>';
-  const wrap=$('joinTeamGroupWrap'),box=$('joinTeamGroups');
-  if(joinPreviewGroups.length){
-    wrap.classList.remove('hidden');
-    box.innerHTML=joinPreviewGroups.map(g=>'<label class="teamGroupCheck"><input type="checkbox" value="'+g.id+'"><span>'+esc(g.name)+'</span></label>').join('');
-  }else{wrap.classList.add('hidden');box.innerHTML=''}
-  if(user?.email){
-    $('joinAccountBox').classList.add('hidden');$('joinLoggedInNotice').classList.remove('hidden');$('joinLoggedInNotice').textContent='ログイン中の '+user.email+' で申請します。';
-  }else{
-    $('joinAccountBox').classList.remove('hidden');$('joinLoggedInNotice').classList.add('hidden');
-  }
 }
 if($('joinCategorySelect'))$('joinCategorySelect').onchange=()=>{$('joinCategoryOther').classList.toggle('hidden',$('joinCategorySelect').value!=='その他')};
 if($('joinExit'))$('joinExit').onclick=()=>location.replace('https://hideyuki062222-cyber.github.io/sports-attendance/');
@@ -342,8 +331,9 @@ if($('submitTeamJoin'))$('submitTeamJoin').onclick=async()=>{
   const name=$('joinPlayerName').value.trim(),cn=$('joinCategorySelect').value==='その他'?$('joinCategoryOther').value.trim():$('joinCategorySelect').value;
   if(!name)return msg('teamJoinMsg','選手名を入力してください。');
   if(!cn)return msg('teamJoinMsg','区分・学年を入力してください。');
-  const body={action:'register',code:joinCode,player_name:name,birth_date:br.value,category_name:cn,team_group_ids:selectedGroupIds('joinTeamGroups')};
-  if(!user){body.email=$('joinEmail').value.trim();body.password=$('joinPassword').value;if(!body.email.includes('@'))return msg('teamJoinMsg','メールアドレスを入力してください。');if(body.password.length<6)return msg('teamJoinMsg','パスワードは6文字以上にしてください。')}
+  const body={action:'register',code:joinCode,player_name:name,birth_date:br.value,category_name:cn,email:$('joinEmail').value.trim(),password:$('joinPassword').value};
+  if(!body.email.includes('@'))return msg('teamJoinMsg','メールアドレスを入力してください。');
+  if(body.password.length<6)return msg('teamJoinMsg','パスワードは6文字以上にしてください。');
   const b=$('submitTeamJoin');b.disabled=true;const old=b.textContent;b.textContent='送信しています…';msg('teamJoinMsg','');
   const {data,error}=await sb.functions.invoke('team-register',{body});b.disabled=false;b.textContent=old;
   if(error||data?.error){let t=data?.error||error?.message||'登録申請を送信できませんでした。';try{if(error?.context){const j=await error.context.json();t=j.error||t}}catch{}return msg('teamJoinMsg',t)}
@@ -374,8 +364,8 @@ function renderOnboarding(){
     $('joinQRArea').classList.add('hidden');$('joinURL').value='';$('joinQRCode').innerHTML='';$('joinQRMeta').textContent='';$('createJoinQR').textContent='登録QRコードを作成';
   }
   $('pendingJoinList').innerHTML=requests.length?requests.map(r=>{
-    const birth=r.birth_date?formatBirthDateBoth(r.birth_date):'未登録',groups=(r.team_group_names||[]).join('・')||'未設定';
-    return '<div class="pendingJoinRow"><div><b>'+esc(r.player_name)+'</b><div class="muted">'+esc(r.category_name)+'｜生年月日 '+esc(birth)+'</div><div class="muted">所属：'+esc(groups)+'｜'+esc(r.guardian_email_masked||'')+'</div></div><div class="pendingJoinActions"><button class="small approveJoin" data-id="'+r.id+'">承認</button><button class="small danger rejectJoin" data-id="'+r.id+'">却下</button></div></div>'
+    const birth=r.birth_date?formatBirthDateBoth(r.birth_date):'未登録';
+    return '<div class="pendingJoinRow"><div><b>'+esc(r.player_name)+'</b><div class="muted">'+esc(r.category_name)+'｜生年月日 '+esc(birth)+'</div><div class="muted">'+esc(r.guardian_email_masked||'')+'</div></div><div class="pendingJoinActions"><button class="small approveJoin" data-id="'+r.id+'">承認</button><button class="small danger rejectJoin" data-id="'+r.id+'">却下</button></div></div>'
   }).join(''):'<p class="muted">現在、承認待ちはありません。</p>';
   document.querySelectorAll('.approveJoin').forEach(b=>b.onclick=()=>reviewJoinRequest(b.dataset.id,'approve'));
   document.querySelectorAll('.rejectJoin').forEach(b=>b.onclick=()=>reviewJoinRequest(b.dataset.id,'reject'));
