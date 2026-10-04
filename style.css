@@ -1256,3 +1256,32 @@ button:active{transform:scale(.985)}
     grid-template-columns:1fr
   }
 }
+
+/* Event form hierarchy */
+.formLead{
+  margin:-2px 0 14px;
+  line-height:1.55;
+  font-size:13px
+}
+.eventCoreFields{
+  margin-bottom:4px
+}
+.eventCoreFields label,
+.notesLabel{
+  display:block;
+  color:#526176;
+  font-size:12px;
+  font-weight:800
+}
+.eventCoreFields input,
+.eventCoreFields select,
+.notesLabel textarea{
+  margin-top:5px
+}
+.notesLabel{
+  margin-top:8px
+}
+.notesLabel textarea{
+  font-weight:500;
+  color:#172033
+}
