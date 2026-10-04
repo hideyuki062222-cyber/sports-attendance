@@ -1312,3 +1312,18 @@ button:active{transform:scale(.985)}
     grid-template-columns:1fr
   }
 }
+
+/* Final spacing refinements */
+.memberListHeader{
+  grid-template-columns:minmax(0,1fr) minmax(280px,360px)
+}
+#createJoinQR{
+  min-height:46px;
+  background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;
+  color:#fff!important;
+  border:0!important;
+  box-shadow:0 8px 18px rgba(37,99,235,.16)!important
+}
+@media(max-width:600px){
+  .memberListHeader{grid-template-columns:1fr}
+}
