@@ -707,3 +707,131 @@ button:active{transform:scale(.985)}
     font-size:9px;
   }
 }
+
+/* Clear substitution cards in edit view */
+#formationSubstitutionList{
+  display:grid;
+  gap:10px;
+  margin-top:14px;
+}
+.formationSubRow{
+  display:grid;
+  grid-template-columns:84px minmax(0,1fr) auto;
+  gap:12px;
+  align-items:center;
+  padding:13px;
+  border:1px solid #dbe3ec;
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(15,23,42,.04);
+}
+.formationSubRow:first-child{border-top:1px solid #dbe3ec}
+.formationSubMeta{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:7px;
+}
+.formationSubNumber{
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#172033;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+.formationSubTime{
+  font-size:17px;
+  font-weight:900;
+  color:#172033;
+  white-space:nowrap;
+}
+.formationSubPlayers{
+  display:grid;
+  gap:7px;
+  min-width:0;
+}
+.formationSubLine{
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr);
+  align-items:center;
+  gap:9px;
+  min-width:0;
+}
+.formationSubLine b{
+  min-width:0;
+  color:#172033;
+  font-size:16px;
+  font-weight:850;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.formationSubLine .subOut,
+.formationSubLine .subIn{
+  min-width:54px;
+  padding:5px 8px;
+  font-size:11px;
+  border-radius:999px;
+  text-align:center;
+}
+.formationSubLineOut{
+  padding-bottom:6px;
+  border-bottom:1px dashed #e5e7eb;
+}
+.formationSubRow .deleteFormationSub{
+  width:auto!important;
+  margin:0!important;
+  padding:8px 10px!important;
+  font-size:12px!important;
+  border-radius:10px!important;
+  align-self:center;
+}
+.formationSubstitutionForm label:has(#subPlayerOut){
+  color:#9b1c1c;
+}
+.formationSubstitutionForm label:has(#subPlayerIn){
+  color:#166534;
+}
+
+@media(max-width:520px){
+  .formationSubstitutionForm{
+    grid-template-columns:1fr 1fr;
+  }
+  .formationSubstitutionForm #subTiming{
+    min-width:0;
+  }
+  .formationSubRow{
+    grid-template-columns:66px minmax(0,1fr);
+    gap:9px;
+    padding:11px;
+  }
+  .formationSubMeta{
+    align-self:start;
+  }
+  .formationSubTime{
+    font-size:15px;
+  }
+  .formationSubLine{
+    grid-template-columns:52px minmax(0,1fr);
+    gap:7px;
+  }
+  .formationSubLine b{
+    font-size:15px;
+  }
+  .formationSubLine .subOut,
+  .formationSubLine .subIn{
+    min-width:48px;
+    padding:4px 6px;
+    font-size:10px;
+  }
+  .formationSubRow .deleteFormationSub{
+    grid-column:1/-1;
+    justify-self:end;
+    padding:6px 9px!important;
+  }
+}
