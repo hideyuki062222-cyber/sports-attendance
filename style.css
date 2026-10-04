@@ -1285,3 +1285,30 @@ button:active{transform:scale(.985)}
   font-weight:500;
   color:#172033
 }
+
+.memberListFilters{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px
+}
+.memberListFilters label{
+  margin:0;
+  color:#59697d;
+  font-size:12px;
+  font-weight:750
+}
+.memberListFilters input,
+.memberListFilters select{
+  margin:5px 0 0;
+  min-height:42px
+}
+@media(max-width:600px){
+  .memberListFilters{
+    grid-template-columns:1fr 1fr
+  }
+}
+@media(max-width:420px){
+  .memberListFilters{
+    grid-template-columns:1fr
+  }
+}
