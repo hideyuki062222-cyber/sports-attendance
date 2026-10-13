@@ -1,4 +1,8 @@
 (() => {
+  const PENDING_INVITE_KEY = 'pendingGuardianInviteCode';
+  const CLAIM_NOTICE_KEY = 'guardianInviteClaimedNotice';
+  let pendingClaimInFlight = false;
+
   const secureInviteCode = (length = 16) => {
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let out = '';
@@ -21,6 +25,57 @@
     if (!el) return;
     el.minLength = 10;
     if (el.placeholder) el.placeholder = el.placeholder.replace('6文字以上', '10文字以上');
+  });
+
+  const showPendingClaimError = (text) => {
+    const targets = ['firstClaimMsg', 'claimMsg', 'msg'];
+    const el = targets.map((id) => document.getElementById(id)).find(Boolean);
+    if (el) el.textContent = text;
+  };
+
+  const completePendingGuardianInvite = async () => {
+    if (pendingClaimInFlight) return false;
+    const code = (localStorage.getItem(PENDING_INVITE_KEY) || '').trim().toUpperCase();
+    if (!code) return false;
+
+    const { data: sessionData } = await sb.auth.getSession();
+    if (!sessionData?.session?.user) return false;
+
+    pendingClaimInFlight = true;
+    try {
+      const { data, error } = await sb.functions.invoke('claim-guardian-invite', { body: { code } });
+      if (error || !data?.ok) {
+        let text = data?.error || error?.message || '招待コードの連携を完了できませんでした。';
+        try {
+          if (error?.context) {
+            const j = await error.context.json();
+            text = j.error || text;
+          }
+        } catch {}
+        showPendingClaimError('メール確認は完了しましたが、招待コードの連携に失敗しました。もう一度招待コードを入力してください。' + (text ? ' ' + text : ''));
+        return false;
+      }
+
+      localStorage.removeItem(PENDING_INVITE_KEY);
+      localStorage.removeItem('signupMode');
+      sessionStorage.setItem(CLAIM_NOTICE_KEY, '1');
+      location.reload();
+      return true;
+    } finally {
+      pendingClaimInFlight = false;
+    }
+  };
+
+  if (sessionStorage.getItem(CLAIM_NOTICE_KEY) === '1') {
+    sessionStorage.removeItem(CLAIM_NOTICE_KEY);
+    setTimeout(() => {
+      if (typeof showToast === 'function') showToast('✓ メール確認と選手の連携が完了しました');
+    }, 500);
+  }
+
+  sb.auth.getSession().then(() => completePendingGuardianInvite()).catch(() => {});
+  sb.auth.onAuthStateChange((_event, session) => {
+    if (session?.user) setTimeout(() => completePendingGuardianInvite(), 0);
   });
 
   const signup = document.getElementById('signupCurrent');
@@ -52,7 +107,7 @@
     }
 
     if (data?.email_confirmation_required) {
-      localStorage.removeItem('signupMode');
+      localStorage.setItem(PENDING_INVITE_KEY, code.trim().toUpperCase());
       msg('msg', data.message || '確認メールを送信しました。メール内のリンクを開いてからログインしてください。');
       return;
     }
